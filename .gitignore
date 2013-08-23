@@ -1,1 +1,7 @@
 node_modules
+heroku
+.pgpass
+.env
+heroku.pub
+.env.dummy
+.gitignore
