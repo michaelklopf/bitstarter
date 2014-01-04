@@ -10,15 +10,15 @@
 #heroku create
 #ssh-keygen -t rsa
 #heroku keys:add
-#heroku addons:add heroku-postgresql:dev --app michaelklopf-bitstarter-mooc
-#heroku addons:add heroku-postgresql:dev --app michaelklopf-bitstarter-s-mooc
+heroku addons:add heroku-postgresql:dev --app michaelklopf-bitstarter-mooc
+heroku addons:add heroku-postgresql:dev --app michaelklopf-bitstarter-s-mooc
 #heroku config --app michaelklopf-bitstarter-mooc | grep HEROKU_POSTGRESQL_BRONZE_URL
 #heroku config --app michaelklopf-bitstarter-s-mooc | grep HEROKU_POSTGRESQL*
 #working is:
-#heroku pg:promote --app michaelklopf-bitstarter-mooc HEROKU_POSTGRESQL_BRONZE_URL
-#heroku pg:promote --app michaelklopf-bitstarter-s-mooc HEROKU_POSTGRESQL_WHITE_URL
+heroku pg:promote --app michaelklopf-bitstarter-mooc HEROKU_POSTGRESQL_BRONZE_URL
+heroku pg:promote --app michaelklopf-bitstarter-s-mooc HEROKU_POSTGRESQL_WHITE_URL
 
-heroku pg:promote "heroku config --app michaelklopf-bitstarter-mooc  | grep HEROKU_POSTGRESQL_BRONZE_URL | cut -f1 -d':'" 
+#heroku pg:promote "heroku config --app michaelklopf-bitstarter-mooc  | grep HEROKU_POSTGRESQL_BRONZE_URL | cut -f1 -d':'" 
 #heroku pg:promote 'heroku config  | grep HEROKU_POSTGRESQL_WHITE | cut -f1 -d':'' --app michaelklopf-bitstarter-s-mooc
 heroku plugins:install git://github.com/ddollar/heroku-config.git
 
